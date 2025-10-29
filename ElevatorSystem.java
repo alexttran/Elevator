@@ -12,24 +12,27 @@ public class ElevatorSystem {
 
   public void start() {
     System.out.println("=== Elevator System Started ===");
-        System.out.println("Building has " + NUM_FLOORS + " floors");
-        System.out.println(NUM_ELEVATORS + " elevators available");
-        System.out.println();
+    System.out.println("Building has " + NUM_FLOORS + " floors");
+    System.out.println(NUM_ELEVATORS + " elevators available");
+    System.out.println();
 
-        Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("\n=== New Passenger ===");
-            System.out.println("Press ENTER to call an elevator (or type 'exit' to quit):");
-            String input = scanner.nextLine();
+    while (true) {
+      System.out.println("\n=== New Passenger ===");
+      System.out.println("Press ENTER to call an elevator (or type 'exit' to quit):");
+      String input = scanner.nextLine();
 
-            if (input.equalsIgnoreCase("exit")) {
-                break;
-            }
+      if (input.equalsIgnoreCase("exit")) {
+        break;
+      }
 
-            // Handle this passenger sequentially
-            handlePassenger(scanner);
-        }
+      // Handle this passenger sequentially
+      handlePassenger(scanner);
+    }
+    controller.shutdown();
+    scanner.close();
+    System.out.println("Elevator system shut down.");
   }
 
   private void handlePassenger(Scanner scanner) {
