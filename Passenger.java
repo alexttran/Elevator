@@ -27,4 +27,15 @@ public class Passenger {
         return direction;
     }
     
+    public long getRequestTime() {
+        return requestTime;
+    }
+    
+    public void arrive() {
+        arrivalLatch.countDown();
+    }
+    
+    public void waitForArrival() throws InterruptedException {
+        arrivalLatch.await();
+    }
 }
