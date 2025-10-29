@@ -1,5 +1,4 @@
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class ElevatorSystem {
   private static final int NUM_FLOORS = 10;
