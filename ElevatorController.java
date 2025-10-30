@@ -73,17 +73,6 @@ public class ElevatorController {
     Elevator bestElevator = null;
     int minDistance = Integer.MAX_VALUE;
     
-    // First, look for elevators going in the same direction
-    for (Elevator elevator : elevators) {
-      if (elevator.canPickup(request.getFloor(), request.getDirection())) {
-        int distance = Math.abs(elevator.getCurrentFloor() - request.getFloor());
-        if (distance < minDistance) {
-          minDistance = distance;
-          bestElevator = elevator;
-        }
-      }
-    }
-    
     // If no elevator is going in the same direction, find the closest idle elevator
     if (bestElevator == null) {
       for (Elevator elevator : elevators) {
