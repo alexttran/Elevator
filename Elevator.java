@@ -139,6 +139,7 @@ public class Elevator implements Runnable {
         // If stopped at a floor, pause for 1 second for boarding/alighting
         if (stoppedAtFloor) {
           System.out.println("Elevator " + id + " doors open at floor " + currentFloor);
+          Thread.sleep(1000);
           System.out.println("Elevator " + id + " doors closed at floor " + currentFloor);
         }
         // Take 1 second to move between floors
