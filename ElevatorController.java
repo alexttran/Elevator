@@ -36,7 +36,7 @@ public class ElevatorController {
         
         synchronized (this) {
           while (pickupQueue.isEmpty() && running) {
-              wait(100);
+              wait(50);
           }
           
           if (!running) break;
@@ -61,7 +61,7 @@ public class ElevatorController {
                            " to floor " + request.getFloor() + " (direction: " + request.getDirection() + ")");
         }
         
-        Thread.sleep(100); // Check every 100ms
+        Thread.sleep(50); // Check every 100ms
         
       } catch (InterruptedException e) {
         Thread.currentThread().interrupt();
@@ -113,7 +113,7 @@ public class ElevatorController {
           }
         }
       }
-      Thread.sleep(100); // Check every 100ms
+      Thread.sleep(50); // Check every 100ms
     }
   }
   

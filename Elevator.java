@@ -83,7 +83,7 @@ public class Elevator implements Runnable {
   public synchronized void addPassenger(Passenger passenger) {
     if (passengers.size() < capacity) {
       passengers.add(passenger);
-      destinationFloors.add(passenger.getDestinationFloor());
+      addDestination(passenger.getDestinationFloor());
     }
   }
   
